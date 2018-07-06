@@ -1,0 +1,216 @@
+@orange:#fbba00;
+//@path:'http://limberi.by/lidbeer.local';
+@path:'';
+body
+{
+	margin:0;
+	padding:0;
+	font-family: 'Roboto', sans-serif;
+
+	background-image:url('@{path}/template/img/bg.jpg');
+}
+header
+{
+	background-color: #343a40;
+	display:flex;
+	justify-content: center;
+	@media only screen and(max-width:927px)
+	{
+		justify-content: space-between;
+	}	
+	ul
+	{
+		display: flex;
+		li 
+		{
+			list-style-type: none;
+			a 
+			{
+				text-transform: uppercase;
+    			color:@orange;
+    			font-size: 16pt;
+    			text-decoration: none;
+    			font-weight: 900;
+    			&:hover
+    			{
+    				text-decoration: underline;
+    			}
+			}
+		}
+	}
+
+	.nav
+	{
+		margin:0 5vw;
+
+		@media only screen and(max-width:927px)
+		{
+			order:2;
+			align-self: center;
+
+			ul 
+			{
+				display:none;
+			}
+		}
+
+		ul 
+		{
+			li
+			{
+				margin-left:2em;
+			}
+		}
+	}
+
+	.bars 
+	{
+
+		div 
+		{
+			width: 35px;
+		    height: 5px;
+		    background-color: @orange;
+		    margin: 6px 0;
+		    display:none;
+		}
+
+		@media only screen and(max-width:927px)
+		{
+			div {display:block;}
+		}
+	}
+	.logo 
+	{
+		align-self: center;
+		@media only screen and(max-width:927px)
+		{
+			margin-left:1em;
+		}
+	}
+}
+.ticket-modal
+{
+	display:none;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+
+    position:absolute;
+    left:50%;
+
+    width:90vw;
+    height:90vh;
+    z-index:1;
+
+    iframe 
+    {
+    	position: relative;
+    	left:-50%;
+    	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    	border:0;
+
+    }
+
+	span.close 
+	{
+	    font-size: 28px;
+		position: relative;
+		left: 52%;
+		cursor: pointer;
+		top: 1em;
+
+		&:hover
+		{
+			opacity:0.8;
+		}
+	}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.wrap
+{
+	.screen1
+	{
+		img.main1 
+		{		
+			display: block;
+			margin:5em auto;
+
+			@media only screen and(max-width:927px)
+			{
+				width:100%;				
+			}
+		}
+
+		img.buy_button 
+		{
+		    width: 370px;
+		    margin: 2em auto;
+		    -webkit-animation: breathing 7s ease-out infinite normal;
+    		animation: breathing 7s ease-out infinite normal;
+		    display:block;
+		    cursor:pointer;  
+	    }
+
+
+		@-webkit-keyframes breathing {
+		  0% {
+		    -webkit-transform: scale(0.9);
+		    transform: scale(0.9);
+		  }
+
+		  25% {
+		    -webkit-transform: scale(1);
+		    transform: scale(1);
+		  }
+
+		  60% {
+		    -webkit-transform: scale(0.9);
+		    transform: scale(0.9);
+		  }
+
+		  100% {
+		    -webkit-transform: scale(0.9);
+		    transform: scale(0.9);
+		  }
+		}
+
+		@keyframes breathing 
+		{
+		  0% {
+		    -webkit-transform: scale(0.9);
+		    -ms-transform: scale(0.9);
+		    transform: scale(0.9);
+		  }
+
+		  25% {
+		    -webkit-transform: scale(1);
+		    -ms-transform: scale(1);
+		    transform: scale(1);
+		  }
+
+		  60% {
+		    -webkit-transform: scale(0.9);
+		    -ms-transform: scale(0.9);
+		    transform: scale(0.9);
+		  }
+
+		  100% {
+		    -webkit-transform: scale(0.9);
+		    -ms-transform: scale(0.9);
+		    transform: scale(0.9);
+		  }
+		}
+
+		img.shapes 
+		{
+			display:block;
+			margin:0 auto;
+			width:50px;
+		}
+	} // .screen1
+}

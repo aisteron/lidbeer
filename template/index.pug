@@ -1,0 +1,45 @@
+doctype html
+<html lang="ru">
+head
+	//- var path = 'http://limberi.by/lidbeer.local/';
+	- var path = '';
+	meta(charset="utf-8")
+	title Лидбир 2018. Купить билет на автобус из Минска и на концерт в Лиде можно тут
+	link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,900&amp;subset=cyrillic-ext" rel="stylesheet")
+	//link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+	meta(name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1")
+	meta(name="description" content="Все о фестивале Лидбир который будет проходить 8 сентября 2018 в Лиде")
+	link(rel="stylesheet" href = path + "template/style.css")
+	script(src=path+'template/js/lazysizes.min.js')
+	script(src=path+'template/js/ls.unveilhooks.min.js')
+	script(src=path+'template/js/custom.js' async defer)
+body
+	header
+		.logo
+			img(src=path+"template/img/limberi_logo.svg" width="95")
+		.nav
+			ul
+				li
+					a(href="/") Главная
+				li
+					a(href="/vehicles.html") Авто
+				li
+					a(href="#") F.A.Q.
+				li
+					a(href="#") Контакты
+			.bars
+				div
+				div
+				div
+		.tel
+			ul
+				li 
+					a(href="tel:+375291387747") +375 29 138 77 47
+	.ticket-modal
+		span.close &times;
+		iframe.lazyload(width="100%" height="99%" data-src="https://shop.piletilevi.ee/public/?concert=256378&shop_provider=kvldbr&design=btb&lang=rus&center=1873&sdc=1#view=ticketsselect")
+	.wrap
+		.screen1
+			img.lazyload.main1(data-src=path+"template/img/main.png")
+			img.lazyload.buy_button(data-src=path+"template/img/button.png")
+			img.lazyload.shapes(data-src=path+'template/img/shapes.png')
