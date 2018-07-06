@@ -23,3 +23,29 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+if(document.querySelector('.bus-order'))
+{
+	let bus_modal, btn, span;
+		bus_modal = document.querySelector('.bus-modal');
+		btn = document.querySelector(".bus-order");
+		span = document.querySelector('.bus-modal span.close');
+
+	btn.onclick = function() {
+	    bus_modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the bus_modal
+	span.onclick = function() {
+	    bus_modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the bus_modal, close it
+	window.onclick = function(event) {
+	    if (event.target == bus_modal) {
+	        bus_modal.style.display = "none";
+	    }
+	}	
+
+
+}
