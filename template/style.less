@@ -19,6 +19,7 @@ header
 	top: 0;
 	left: 0;
 	right: 0;
+	z-index:2;
 	@media only screen and(max-width:927px)
 	{
 		justify-content: space-between;
@@ -43,6 +44,13 @@ header
 			}
 		}
 	}
+	.tel 
+	{
+		@media only screen and(max-width:400px)
+		{
+			display:none;
+		}
+	}
 
 	.nav
 	{
@@ -55,9 +63,39 @@ header
 
 			ul 
 			{
+			    position: absolute;
+			    top: 3.5em;
+			    right: 0;
+			    background: #343a40;
+			    margin: 0;
+			    height: 100vh;
 				display:none;
+				width:0;
+				padding-top:2em;
+
+				li 
+				{
+					line-height: 3em;
+				}
+
+				div.row hr 
+				{
+				    border-color: orange;
+				    border-width: 1px;
+				    width: 90%;
+
+				}
+
 			}
 		}
+		@media only screen and(max-width:400px)
+		{
+			ul 
+			{
+				top:2em;
+			}
+		}
+
 
 		ul 
 		{
@@ -100,12 +138,13 @@ header
     animation-name: animatetop;
     animation-duration: 0.4s;
 
-    position:absolute;
+    position:fixed;
     left:50%;
 
     width:90vw;
     height:90vh;
     z-index:1;
+    top: 10em;
 
     iframe 
     {
@@ -119,16 +158,18 @@ header
 
 	span.close 
 	{
-	    font-size: 28px;
-		position: relative;
-		left: 52%;
-		cursor: pointer;
-		top: 1em;
+	       background-color: #fff;
+		    padding: .4em;
+		    top: -2.5em;
+		    left: 48%;
+		    position: absolute;
+		    cursor:pointer;
 
 		&:hover
 		{
 			opacity:0.8;
 		}
+
 	}
 }
 
@@ -143,10 +184,15 @@ header
 	display:none;
 	position:fixed;
     left:50%;
-	top:30%;
+	top:6em;
     width:40vw;
     height:50vh;
     z-index:1;
+    @media only screen and(max-width:927px)
+	{
+		width:90vw;
+		position: absolute;
+	}
 
     .inner 
     {
@@ -154,6 +200,7 @@ header
     	left:-50%;
     	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     	background-color: #fff;
+    	padding:1em;
     }
 
     span.close 
@@ -162,6 +209,13 @@ header
 	    background-color: #fff;
 		padding: 0.5rem;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+		z-index:1;
+		@media only screen and(max-width:927px)
+		{
+			left: 46%;
+		    cursor: pointer;
+		    top: -1em;
+		}	
     }
 }
 
@@ -289,6 +343,30 @@ header
 			display: inline;
 
 
+		}
+		img.gala
+		{
+			margin:5em auto;
+		}
+		img.group
+		{
+			margin-bottom:3em;
+		}
+
+		@keyframes bounce 
+		{
+		 0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+		 40% {transform: translateY(-20px);}
+		 60% {transform: translateY(-15px);}
+		}
+		img.buy_button 
+		{
+			animation: bounce 2s infinite;
+			cursor:pointer;
+		}
+		img.black_shapes
+		{
+			display:block; margin:4em auto;
 		}
 	} // .screen2
 }
