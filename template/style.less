@@ -10,6 +10,10 @@ body
 
 	background-image:url('@{path}/template/img/bg.jpg');
 }
+a 
+{
+	color:#fff;
+}
 header
 {
 	background-color: #343a40;
@@ -44,11 +48,30 @@ header
 			}
 		}
 	}
+	.float_ticket 
+	{
+	    position: absolute;
+    	right: 1em;
+    	top: 5em;
+    	cursor:pointer;
+	}
 	.tel 
 	{
+		margin-top: -0.4em; 
 		@media only screen and(max-width:400px)
 		{
 			display:none;
+		}
+
+		ul {margin-bottom:0;}
+
+		p.comment
+		{
+			margin:0;
+			padding:0;
+			color:@orange;
+			padding-left:40px;
+			font-size:0.9rem;
 		}
 	}
 
@@ -72,6 +95,7 @@ header
 				display:none;
 				width:0;
 				padding-top:2em;
+				z-index: 2;
 
 				li 
 				{
@@ -102,12 +126,18 @@ header
 			li
 			{
 				margin-left:2em;
+
+				a.active
+				{
+					text-decoration: underline;
+				}
 			}
 		}
 	}
 
 	.bars 
 	{
+		cursor:pointer;
 
 		div 
 		{
@@ -130,6 +160,14 @@ header
 		{
 			margin-left:1em;
 		}
+	}
+
+	.logo.arrow
+	{
+		font-size:2em;
+		color:@orange;
+		cursor: pointer;
+		margin-top: -6px;
 	}
 }
 .ticket-modal
@@ -201,6 +239,11 @@ header
     	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     	background-color: #fff;
     	padding:1em;
+
+    	a 
+    	{
+    		color:@orange;
+    	}
     }
 
     span.close 
@@ -238,61 +281,11 @@ header
 		{
 		    width: 370px;
 		    margin: 2em auto;
-		    -webkit-animation: breathing 7s ease-out infinite normal;
-    		animation: breathing 7s ease-out infinite normal;
+    		animation: animatetop;
 		    display:block;
 		    cursor:pointer;  
 	    }
 
-
-		@-webkit-keyframes breathing {
-		  0% {
-		    -webkit-transform: scale(0.9);
-		    transform: scale(0.9);
-		  }
-
-		  25% {
-		    -webkit-transform: scale(1);
-		    transform: scale(1);
-		  }
-
-		  60% {
-		    -webkit-transform: scale(0.9);
-		    transform: scale(0.9);
-		  }
-
-		  100% {
-		    -webkit-transform: scale(0.9);
-		    transform: scale(0.9);
-		  }
-		}
-
-		@keyframes breathing 
-		{
-		  0% {
-		    -webkit-transform: scale(0.9);
-		    -ms-transform: scale(0.9);
-		    transform: scale(0.9);
-		  }
-
-		  25% {
-		    -webkit-transform: scale(1);
-		    -ms-transform: scale(1);
-		    transform: scale(1);
-		  }
-
-		  60% {
-		    -webkit-transform: scale(0.9);
-		    -ms-transform: scale(0.9);
-		    transform: scale(0.9);
-		  }
-
-		  100% {
-		    -webkit-transform: scale(0.9);
-		    -ms-transform: scale(0.9);
-		    transform: scale(0.9);
-		  }
-		}
 
 		img.shapes 
 		{
@@ -327,16 +320,6 @@ header
 		margin:5em auto;
 		width:834px;
 		text-align: center;
-		@media only screen and (max-width:834px)
-		{
-			width:90%;
-			padding:1em;
-
-			img:not(.black_shapes)
-			{
-				width:80%;
-			}
-		}
 		p {font-weight: 900; color:@black;}
 		img 
 		{
@@ -351,6 +334,7 @@ header
 		img.group
 		{
 			margin-bottom:3em;
+			width:834px;
 		}
 
 		@keyframes bounce 
@@ -368,5 +352,149 @@ header
 		{
 			display:block; margin:4em auto;
 		}
+
+		@media only screen and (max-width:834px)
+		{
+			width:90%;
+			padding:1em;
+
+			img:not(.black_shapes)
+			{
+				width:80%;
+			}
+		}
+
 	} // .screen2
+
+	.screen3
+	{
+		&:extend(.wrap .screen2 all);
+		p
+		{
+			font-size:1.5rem;
+		}
+
+		img.band
+		{
+			width:836px;
+		}
+		img.more_items
+		{
+			width:836px;
+		}
+		img.items2017
+		{
+			width:836px;
+		}
+		img.lidbeer2017
+		{
+			width:350px;
+			margin-bottom:2em;
+		}
+
+		@media only screen and (max-width:834px)
+		{
+
+			img:not(.black_shapes)
+			{
+				width:80%;
+			}
+		}
+	}//.screen3
+
+	.screen4
+	{
+		&:extend(.wrap .screen2 all);
+
+		img.previous
+		{
+			margin-bottom:2em;
+		}
+
+		iframe 
+		{
+			@media only screen and (max-width:834px)
+			{
+				//width:100%;
+				width: 111%;
+			    margin-left: -38px;
+			    margin-right: -38px;
+			}	
+		}
+
+		.slide 
+		{
+			margin-top: -4px;
+
+			@media only screen and (max-width:834px)
+			{
+				img 
+				{
+					width:inherit;
+				}
+			}
+		}
+
+		.i-go 
+		{
+			width:450px;
+			margin:3em auto;
+			cursor:pointer;
+		}
+		p
+		{
+			font-size:1.5rem;
+
+			
+		}
+		p.count 
+			{
+				font-size:3em;
+			}
+	} // .screen4
+
+}
+.wrap.gala 
+{
+	background-color: #eee;
+	width:0vw;
+	height: 100%;
+	position: absolute;
+	top:0;
+	transition: 0.5s all;
+	visibility: hidden;
+
+	.inner 
+	{
+		width:834px;
+		margin:10em auto 0;
+
+		@media only screen and (max-width:834px)
+		{
+			width:100%;
+
+			img 
+			{
+				width:80%;
+			}
+		}
+	}
+}
+
+footer 
+{
+	background-color: @black;
+	min-height:60px;
+	display: flex;
+	align-items: center;
+		justify-content: center;
+		padding:1em;
+
+	p
+	{
+		color:#fff;
+		margin:0;
+		line-height: 150%;
+		font-size:0.9rem;
+	}
 }
