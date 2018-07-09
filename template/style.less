@@ -458,7 +458,7 @@ header
 {
 	background-color: #eee;
 	width:0vw;
-	height: 100%;
+	min-height: 100%;
 	position: absolute;
 	top:0;
 	transition: 0.5s all;
@@ -469,15 +469,106 @@ header
 		width:834px;
 		margin:10em auto 0;
 
+		img 
+		{
+			display:block;
+			margin:2em auto;
+		}
+
+		img.groups 
+		{
+			width: 834px;
+		}
+
 		@media only screen and (max-width:834px)
 		{
 			width:100%;
 
 			img 
 			{
-				width:80%;
+				width:80% !important;
 			}
 		}
+
+
+	}
+}
+
+.wrap.faq
+{
+	&:extend(.wrap.gala all);
+	overflow: auto;
+
+	.tabs 
+	{
+		display:flex;
+		flex-wrap:wrap;
+		margin-bottom:1em;
+	}
+	.content
+	{
+		flex-grow: 1;
+		border: 1px solid #ccc;
+		width:67%;
+	}
+
+		/* Style the tab */
+	.tab {
+	    border: 1px solid #ccc;
+	    background-color: #f1f1f1;
+	    width: 30%;
+	    //height: 300px;
+        border-right: none;
+	}
+
+	/* Style the buttons inside the tab */
+	.tab button {
+	    display: block;
+	    background-color: inherit;
+	    color: black;
+	    padding: 22px 16px;
+	    width: 100%;
+	    border: none;
+	    outline: none;
+	    text-align: left;
+	    cursor: pointer;
+	    transition: 0.3s;
+	    font-size: 17px;
+	}
+
+	/* Change background color of buttons on hover */
+	.tab button:hover {
+	    background-color: #ddd;
+	}
+
+	/* Create an active/current "tab button" class */
+	.tab button.active {
+	    background-color: #ccc;
+	}
+
+	/* Style the tab content */
+	.tabcontent {
+	    padding: 1em;
+
+	    h3 
+	    {
+    	    margin-top: 0;
+	    }
+
+	    p.bold 
+	    {
+	    	font-weight:bold;
+	    }
+	    p.bolder
+	    {
+	    	font-weight:bold;
+	    	font-size:1.1rem;
+	    }
+
+	    a 
+	    {
+	    	color:@orange;
+	    }
 	}
 }
 

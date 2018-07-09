@@ -207,6 +207,9 @@ function go_home()
 	document.querySelector('.wrap.gala').style.visibility = 'hidden';
 	document.querySelector('.wrap.gala').style.width = '0vw';
 
+	document.querySelector('.wrap.faq').style.visibility = 'hidden';
+	document.querySelector('.wrap.faq').style.width = '0vw';
+
 	let nav = document.querySelectorAll('.nav li a');
 
 	for (let i = nav.length - 1; i >= 0; i--)
@@ -222,3 +225,50 @@ function go_home()
 document.querySelector('header .logo').addEventListener('click', go_home);
 document.querySelector('.nav li a.main').addEventListener('click', go_home);
 
+// F.A.Q.
+
+document.querySelector('.nav a.faq').addEventListener('click', function(e){
+	if(window.innerWidth < 927){ close_sidebar(); }
+
+	document.querySelector('.wrap.faq').style.visibility = 'visible';
+	document.querySelector('.wrap.faq').style.width = '100vw';
+
+	let nav = document.querySelectorAll('.nav li a');
+
+	for (let i = nav.length - 1; i >= 0; i--)
+	{
+	  nav[i].classList.remove('active');
+	}
+
+	e.target.classList.add('active');
+
+	document.querySelector('header .logo').innerHTML = '&#x2190;';
+	document.querySelector('header .logo').classList.add('arrow');
+
+});
+
+// FAQ tabs
+
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
